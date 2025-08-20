@@ -21,7 +21,7 @@ public class ArrayOperations {
        int[] copiedArray = Arrays.copyOf(arr, arr.length);
        System.out.println("Copied Array: " + Arrays.toString(copiedArray));
 
-       // Using Arrays.equals() to compare two arrays
+       // Using Arrays.equals() to compare two arrays content
        boolean isEqual = Arrays.equals(arr, copiedArray);
        System.out.println("Arrays are equal: " + isEqual);
 

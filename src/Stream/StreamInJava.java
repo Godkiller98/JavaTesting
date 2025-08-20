@@ -1,14 +1,17 @@
 package Stream;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.lang.reflect.Array;
+import java.util.*;
+import java.util.stream.Collectors;
+
+import static java.util.Arrays.*;
 
 public class StreamInJava {
         public static void main(String[] args) {
-            // TODO Auto-generated method stubX
-//            List<String> arr1 = Arrays.asList("Rohit", "Jack", "christopher", "Rahul");
+
+           List<String> arr1 = Arrays.asList("Rohit", "Jack", "christopher", "Rahul");
 //            arr1.forEach(n->System.out.println(n));
+                arr1.stream().sorted((a,b)->a.length()-b.length()).forEach(x-> System.out.println(x));
 //
 //            arr1.stream().filter(s -> s.startsWith("R")).forEach(s -> System.out.println(s));
 //            System.out.println(
@@ -71,10 +74,10 @@ public class StreamInJava {
 //                        int[] arr2 = {4,3,2,1};
 //            Arrays.stream(arr2).map(x->x*x).sorted().forEach(System.out::println);
 //            System.out.println(Arrays.stream(arr2).reduce((a,b)->a+b));
-//    String t ="  ROhit Mane a232jgbh # Gsgcjhsu% ugsc&b#899BH@JBJ B^jJ&kn65434k(jb*bjBB) bjcbsd{}  KJN? NKN. vc";
+    String t ="  ROhit Mane a232jgbh # Gsgcjhsu% ugsc&b#899BH@JBJ B^jJ&kn65434k(jb*bjBB) bjcbsd{}  KJN? NKN. vc";
 //
 //
-//    int result= t.trim().replaceAll("[a-zA-z0-9\\s]","").length();
+    int result= t.trim().replaceAll("[a-zA-z0-9\\s]","").length();
 //    System.out.println(result);
 
 // int[] t1 = Arrays.stream(t).distinct().sorted().toArray();
@@ -82,41 +85,43 @@ public class StreamInJava {
 //            int[] target =  Arrays.stream(t).distinct().sorted().toArray();
 //            int[] targetrev = Arrays.stream(t).distinct().boxed().sorted(Comparator.reverseOrder()).mapToInt(Integer::intValue).toArray();
 //            System.out.println(Arrays.toString(targetrev));
-            int t[]={1,2,2,3,3,4,4,9,8,7,6,7};
-            int tar[] = {2,1,4};
+//            int t[]={1,2,2,3,3,4,4,9,8,7,6,7};
+//            int tar[] = {2,1,4};
 //            String[] ar2 = {"ROhit","David","Tom","Lokesh"};
 //            int tar = Arrays.stream(t).reduce(1,(a,b)->a+b);
 //
 //            Arrays.stream(ar2).filter(n->n.startsWith("R")).forEach(n->System.out.println(n));
 //            System.out.println(tar);
-        int ta =(int)    Arrays.stream(tar).reduce(0,(a,b)->a+b);
-List<Integer> lis = Arrays.asList(1,2,3,4,2,3,4,5);
+//        int ta =(int)    Arrays.stream(tar).reduce(0,(a,b)->a+b);
+//List<Integer> lis = Arrays.asList(1,2,3,4,2,3,4,5);
 //            System.out.println(findMaxList(lis));
-                Optional<Integer> ols = findMaxList(lis);
-                if(ols.isPresent()){
-                    System.out.println("Max" + ols.get());
-                }else{
-                    System.out.println("NOthing is max");
-                }
+//                Optional<Integer> ols = findMaxList(lis);
+//                if(ols.isPresent()){
+//                    System.out.println("Max" + ols.get());
+//                }else{
+//                    System.out.println("NOthing is max");
+//                }
+//
+//            Optional<Integer> ols2=findMinList(lis);
+//            {
+//                if(ols2.isPresent()){
+//                    System.out.println("Min" +ols2.get());
+//                }else{
+//                    System.out.println("Nothing is min");
+//                }
 
-            Optional<Integer> ols2=findMinList(lis);
-            {
-                if(ols2.isPresent()){
-                    System.out.println("Min" +ols2.get());
-                }else{
-                    System.out.println("Nothing is min");
-                }
-            }
+
+           }
   }
 
 
-    public static Optional<Integer> findMaxList(List<Integer> lis){
-   return
-//           lis.stream().reduce(Integer::max).orElse(0);
-        lis.stream().reduce((x,y)->x>y?x:y);
-    }
-
-    public static Optional<Integer> findMinList(List<Integer> lis2){
-       return     lis2.stream().reduce((x,y)->x<y?x:y);
-    }
-}
+//    public static Optional<Integer> findMaxList(List<Integer> lis){
+//   return
+//          lis.stream().reduce(Integer::max).orElse(0);
+//        lis.stream().reduce((x,y)->x>y?x:y);
+//    }
+//
+//    public static Optional<Integer> findMinList(List<Integer> lis2){
+//       return     lis2.stream().reduce((x,y)->x<y?x:y);
+//    }
+//}
