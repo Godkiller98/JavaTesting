@@ -88,7 +88,10 @@ public class StreamInJava {
 //            int t[]={1,2,2,3,3,4,4,9,8,7,6,7};
 //            int tar[] = {2,1,4};
 //            String[] ar2 = {"ROhit","David","Tom","Lokesh"};
-//            int tar = Arrays.stream(t).reduce(1,(a,b)->a+b);
+//            int tar = Arrays.stream(t).// Example: Using reduce to sum elements of an array
+int[] numbers = {1, 2, 3, 4, 5};
+int sum = Arrays.stream(numbers).reduce(0, (a, b) -> a + b);
+
 //
 //            Arrays.stream(ar2).filter(n->n.startsWith("R")).forEach(n->System.out.println(n));
 //            System.out.println(tar);

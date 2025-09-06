@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+// Demonstrates the use of Java Streams to perform skip and limit operations on a list of integers
+
 public class StreamWithSkipAndLimit{
     public static void main(String[] args) {
         List<Integer> lis = Arrays.asList(1,2,3,4,5);
