@@ -34,13 +34,26 @@ public class ArrayOperations {
        int sum = Arrays.stream(arr).sum();
        System.out.println("Sum of Array Elements: " + sum);
 
-       // Using Arrays.stream() to find the average
+
+        // Using Arrays.stream() to find the average
        double average = Arrays.stream(arr).average().orElse(0);
        System.out.println("Average of Array Elements: " + average);
 
 
         String s = "  ROhit Mane  989 898 ";
         String s1 = s.replaceAll("[0-9\\s]","");
+        System.out.println(s.replaceAll("[^a-zA-Z]",""));
         System.out.println(s1);
+
+
+        int[]  arr3={1,2,3,4};
+        int n =arr3.length;
+        int sum2 =0;
+        int[] arr4 = new int[n];
+        for(int i=0;i<n;i++){
+            sum2=sum2+arr3[i];
+            arr4[i]=sum2;
+        }
+        System.out.println(Arrays.toString(arr4));
      }
 }

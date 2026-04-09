@@ -15,8 +15,24 @@ public class targetNum {
 //                System.out.println("COmpliement" + sub + "e" + arrs);
 //            }set.add(arrs);
 //        }
-        String r = "Rohit Mane";
-        StringBuffer rs = new StringBuffer(r.split(" ")[1].replaceAll("[\\s]","")).reverse();
-        System.out.println(rs);
+
+
+        int arr1[]={1,2,3,4,5,6,7};
+        int target2=9;
+        int count=0;
+        HashSet<Integer> h1 = new HashSet<>();
+        for(int arr3:arr1){
+            int comp=target2-arr3;
+        if(h1.contains(comp)){
+            System.out.println("pair is"+comp + "and" + arr3);
+            count++;
+        }h1.add(arr3);
+
+        }
+
+// String r ="  ^ 87686  Rohit mane  ";
+// StringBuffer s1 = new StringBuffer(r.replaceAll("[^a-zA-Z]",""));
+//        System.out.println(s1.reverse());
+//
     }
 }

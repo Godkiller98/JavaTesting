@@ -1,23 +1,38 @@
 package Stream;
 
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Collectors;
-
-import static java.util.Arrays.*;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class StreamInJava {
         public static void main(String[] args) {
-
-           List<String> arr1 = Arrays.asList("Rohit", "Jack", "christopher", "Rahul");
+List<Integer> li=Arrays.asList(1,2,3,4,5,6,7,9);
+int t=li.stream().filter(x->x%2==0).map(x->x*3).reduce((a,b)->a+b).orElse(0);
+            System.out.println(t);
+            int[] arr2=li.stream().sorted((a,b)->b-a).mapToInt(Integer::intValue).toArray();
+            System.out.println(Arrays.toString(arr2));
+//           List<String> arr1 = Arrays.asList("Rohit", "Jack", "christopher", "Rahul");
 //            arr1.forEach(n->System.out.println(n));
-                arr1.stream().sorted((a,b)->a.length()-b.length()).forEach(x-> System.out.println(x));
+//                arr1.stream().sorted((a,b)->a.length()-b.length()).forEach(System.out::println);
+//
+//
+//            List<Integer> li1=Arrays.asList(1,2,3,4,5,3,4);
+//           List<Integer> li2=li1.stream().distinct().map(x->x*x).collect(Collectors.toList());
+//            int t =li2.stream().reduce(0,(a,b)->a+b);
+//
+//            int[] tee=li2.stream().filter((a)->a%2==0).mapToInt(Integer::intValue).toArray();
+//            System.out.println(t);
+//            System.out.println(li2);
+//
+//            String st2="my name is rohit mane";
+//            char[] ch1=st2.toCharArray();
+//
 //
 //            arr1.stream().filter(s -> s.startsWith("R")).forEach(s -> System.out.println(s));
-//            System.out.println(
-//                    "------------------------------------STARTS WITH J---------------------------------------------------------------------");
-//            Stream.of("Jack", "John", "Ryan").filter(s -> s.startsWith("J")).limit(1).forEach(s -> System.out.println(s));
-//            System.out.println(
+//            arr1.stream().filter(s->s.startsWith("J")).forEach(x->System.out.println(x));
+//                    arr1.stream().filter(s -> s.startsWith("R")).forEach(System.out::println);
+//                       System.out.println(
 //                    "-------------------------------lenght greater than 4--------------------------------------------------------------------------");
 //            arr1.stream().filter(s -> s.length() > 4).forEach(s -> System.out.println(s));
 //            System.out.println(
@@ -38,7 +53,6 @@ public class StreamInJava {
 //
 //            System.out.println(
 //                    "---------------------------------------------------------------------------------------------------------");
-//
 //            List<String> ls = arr1.stream().filter(s -> s.startsWith("R")).sorted().collect(Collectors.toList());
 //            System.out.println(ls.get(0));
 //            System.out.println(ls.size());
@@ -49,6 +63,7 @@ public class StreamInJava {
 //            List<Integer> al = Arrays.asList(1,2,5,2,3,3,1,5);
 //            al.stream().distinct().sorted().forEach(s->System.out.println(s));
 //            al.stream().map(n->n*2).forEach(n->System.out.println(n));
+//
 //            System.out.println(
 //                    "---------------------------------------------------------------------------------------------------------");
 //
@@ -58,12 +73,12 @@ public class StreamInJava {
 //                    "---------------------------------------------------------------------------------------------------------");
 //            List<Integer> array12 = Arrays.asList(6,7,5,6,2,4);
 //            array12.stream().sorted().forEach(n->System.out.println(n));
-
-
+//
+//
 //            int[] arr= {5,6,1,2,3,4,4,3,1,2};
-//            int[] arr2 = {10,11,12,13};
+//            int[] arr20 = {10,11,12,13};
 //            Arrays.stream(arr).sorted().distinct().forEach(n->System.out.println(n));
-//            IntStream.concat(Arrays.stream(arr),Arrays.stream(arr2)).distinct().sorted().forEach(n->System.out.println(n));
+//            IntStream.concat(Arrays.stream(arr),Arrays.stream(arr20)).distinct().sorted().forEach(n->System.out.println(n));
 //            Arrays.stream(arr).distinct().sorted().filter(n->n%2==0).forEach(System.out::println);
 //            System.out.println("++++++++++++++++");
 //            int t= (int) Arrays.stream(arr).filter(n->n%2==0).count();
@@ -71,15 +86,14 @@ public class StreamInJava {
 //            Arrays.stream(arr).filter(n->n%2==0);
 //            List<String> li = Arrays.asList("Rohit","Ton","David","dar");
 //            li.stream().filter(x->x.length()==5).forEach(System.out::println);
-//                        int[] arr2 = {4,3,2,1};
+//
+
 //            Arrays.stream(arr2).map(x->x*x).sorted().forEach(System.out::println);
 //            System.out.println(Arrays.stream(arr2).reduce((a,b)->a+b));
-    String t ="  ROhit Mane a232jgbh # Gsgcjhsu% ugsc&b#899BH@JBJ B^jJ&kn65434k(jb*bjBB) bjcbsd{}  KJN? NKN. vc";
+//    String ti ="  ROhit Mane a232jgbh # Gsgcjhsu% ugsc&b#899BH@JBJ B^jJ&kn65434k(jb*bjBB) bjcbsd{}  KJN? NKN. vc";
 //
-//
-    int result= t.trim().replaceAll("[a-zA-z0-9\\s]","").length();
+//    int result= t.trim().replaceAll("[a-zA-z0-9\\s]","").length();
 //    System.out.println(result);
-
 // int[] t1 = Arrays.stream(t).distinct().sorted().toArray();
 //                System.out.println(Arrays.toString(t1));
 //            int[] target =  Arrays.stream(t).distinct().sorted().toArray();
@@ -89,10 +103,9 @@ public class StreamInJava {
 //            int tar[] = {2,1,4};
 //            String[] ar2 = {"ROhit","David","Tom","Lokesh"};
 //            int tar = Arrays.stream(t).// Example: Using reduce to sum elements of an array
-int[] numbers = {1, 2, 3, 4, 5};
-int sum = Arrays.stream(numbers).reduce(0, (a, b) -> a + b);
+//int[] numbers = {1, 2, 3, 4, 5};
+//int sum = Arrays.stream(numbers).reduce(0, (a, b) -> a + b);
 
-//
 //            Arrays.stream(ar2).filter(n->n.startsWith("R")).forEach(n->System.out.println(n));
 //            System.out.println(tar);
 //        int ta =(int)    Arrays.stream(tar).reduce(0,(a,b)->a+b);
@@ -113,14 +126,20 @@ int sum = Arrays.stream(numbers).reduce(0, (a, b) -> a + b);
 //                    System.out.println("Nothing is min");
 //                }
 
-
+//        int arr10[]   = {1,2,3,4,5,6,7,8,9};
+//    OptionalInt max= Arrays.stream(arr10).boxed().mapToInt(Integer::intValue).max();
+//            System.out.println(max.getAsInt());
+//            OptionalInt min= Arrays.stream(arr10).boxed().mapToInt(Integer::intValue).min();
+//            System.out.println(min.getAsInt());
+//
+//                al.stream().distinct().sorted((x,y)->y-x).forEach(x->System.out.println(x));
            }
   }
 
-
+//
 //    public static Optional<Integer> findMaxList(List<Integer> lis){
-//   return
-//          lis.stream().reduce(Integer::max).orElse(0);
+//
+//    return    lis.stream().reduce(Integer::max).orElse(0);
 //        lis.stream().reduce((x,y)->x>y?x:y);
 //    }
 //

@@ -14,14 +14,17 @@ import java.util.stream.Stream;
 
 public class StreamLearning {
     public static void main(String[] args) {
-//        int[] a = {1,2,2,3,3,4,5,6};
+      int[] a = {1,2,2,3,3,4,5,6};
+      Integer aa = 10;
+      int[] b1 = Arrays.stream(a).boxed().distinct().sorted(Comparator.reverseOrder()).mapToInt(Integer::intValue).toArray();
 //        int[] b = Arrays.stream(a).boxed().sorted(Comparator.reverseOrder()).mapToInt(Integer::intValue).toArray();
-        //   Arrays.stream(b).forEach(x->System.out.println(x));
 //        System.out.println(Arrays.stream(a).distinct().sum());
 //        List<String> li = Arrays.asList("AKJshay","Tony","David","luther");
 //       long t2=  li.stream().filter(x->x.startsWith("T")).count();
 //        System.out.println(t2);
-//       String l3="Hello World";
+       String l3="Hello World";
+      int[] lsls=l3.chars().toArray();
+      System.out.println(Arrays.toString(lsls));
 //       long t3 = l3.chars().filter(x->x=='l').count();
 //        System.out.println(t3);
 //        List<String> li2 = li.stream().map(String::toLowerCase).filter(x->x.startsWith("a")).toList();
@@ -39,12 +42,14 @@ public class StreamLearning {
 //        System.out.println(s1.get());
 //        Stream<String> a = li.stream().filter(x -> x.startsWith("A"));
 //        a.forEach(System.out::println);
-      List<Integer> li2 = Arrays.asList(1,2,2,3,3,4,5,6);
+//      List<Integer> li2 = Arrays.asList(1,2,2,3,3,4,5,6,1,3,4);
+//     li2.stream().distinct().sorted().forEach(x->System.out.println(x));
+
 //      int t = li2.stream().distinct().reduce(0, Integer::sum);
-       Optional<Integer> tas= li2.stream().max(Comparator.naturalOrder());
-       Optional<Integer> minTas = li2.stream().min(Comparator.naturalOrder());
-        System.out.println(tas.get());
-        System.out.println(minTas.get());
+//       Optional<Integer> tas= li2.stream().max(Comparator.naturalOrder());
+//       Optional<Integer> minTas = li2.stream().min(Comparator.naturalOrder());
+//        System.out.println(tas.get());
+//        System.out.println(minTas.get());
 //      List<String> les = Arrays.asList("rohit","tom");
 //        Object[] arr = les.stream().map(String::toLowerCase).toArray();
 //        System.out.println(t);
